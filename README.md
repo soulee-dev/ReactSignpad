@@ -1,50 +1,43 @@
-# React + TypeScript + Vite
+# ReactSignpad
+ReactSignpad is a technological prototype designed to showcase how **SharedWorker** can be used to share data between multiple browser tabs in real-time. This project demonstrates a multiple-tab Signpad application where one tab acts as the Operator and the other as the Customer.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Customer can sign using a mouse or touch input, and the signature is mirrored instantly on the Operator's screen.
 
-Currently, two official plugins are available:
+## Features
+- Real-Time Synchronization: Utilizes SharedWorker to sync data between the multiple tabs instantly.
+- Multiple-Tabs Interaction: One tab serves as the Operator view, while the other is the Customer view.
+- User-Friendly Signing: Supports both mouse and touch input for signing.
+- Efficient Communication: Demonstrates the power of SharedWorker for real-time, inter-tab communication.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How It Works
+1. SharedWorker is used to establish a shared data channel between the multiple tabs.
+2. The Customer tab allows the user to draw their signature using mouse or touch input.
+3. The signature data is sent to the Operator tab in real-time, where it is mirrored instantly.
 
-## Expanding the ESLint configuration
+## Getting Started
+### Prerequisites
+- Node.js and npm installed
+- A modern browser that supports SharedWorker (e.g., Chrome, Firefox)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Installation
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone the repository:
+```bash
+git clone https://github.com/soulee-dev/ReactSignpad.git
+cd ReactSignpad
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+2. Install dependencies:
+```bash
+npm install
+Start the development server:
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+4. Open two or more tabs in your browser and navigate to the same URL provided by the development server.
+
+## Debug
+To debug SharedWorker, type `chrome://inspect/#workers` on browser.
