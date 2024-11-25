@@ -1,4 +1,6 @@
 # ReactSignpad
+https://github.com/user-attachments/assets/15ef641f-e82c-430e-9845-9e99df66c990
+
 ReactSignpad is a technological prototype designed to showcase how **SharedWorker** can be used to share data between multiple browser tabs in real-time. This project demonstrates a multiple-tab Signpad application where one tab acts as the Operator and the other as the Customer.
 
 The Customer can sign using a mouse or touch input, and the signature is mirrored instantly on the Operator's screen.
